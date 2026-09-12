@@ -1,25 +1,17 @@
 ---
 name: implementation
-description: Use ao implementar código. Respeita a arquitetura, reutiliza componentes, evita duplicação, mantém código simples, pensa em internacionalização e explica decisões relevantes. Compreende a finalidade do código existente antes de alterar.
+description: Implementa alterações de código dentro da arquitetura existente, com escopo controlado e validação adequada.
 ---
 
-## Objetivo
+## Fluxo
 
-Implementar código seguindo o [ENGINEERING.md](../ENGINEERING.md).
+- compreender a finalidade do código afetado;
+- identificar pontos de integração;
+- reutilizar componentes existentes;
+- alterar somente o necessário;
+- evitar duplicação e complexidade desnecessária;
+- validar a alteração com testes ou verificações pertinentes.
 
-Sempre:
+Consulte `PROJECT_CONTEXT.md` somente se a tarefa depender dele.
 
-- respeitar arquitetura;
-- reutilizar componentes;
-- evitar duplicação;
-- criar código simples;
-- pensar em internacionalização;
-- explicar decisões relevantes.
-
-Antes de alterar código existente, compreender sua finalidade.
-
-Após implementação:
-
-- revisar;
-- documentar;
-- sugerir testes.
+Após uma alteração relevante, revise o diff e considere o `reviewer`.

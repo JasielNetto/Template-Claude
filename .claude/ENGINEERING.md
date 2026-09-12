@@ -1,351 +1,81 @@
 # Manual de Engenharia de Software
 
-Este documento define os padrões de desenvolvimento adotados neste projeto.
+Este documento define os padrões gerais de desenvolvimento do projeto. As regras abaixo orientam o agente, salvo requisitos explícitos do usuário ou do projeto.
 
-O objetivo é produzir software limpo, consistente, documentado, de fácil manutenção e preparado para evolução futura.
+## Princípios
 
-Estas regras possuem prioridade sobre preferências do agente de IA, exceto quando conflitarem com requisitos explícitos do projeto ou do usuário.
+Priorize simplicidade, clareza, legibilidade, manutenibilidade, segurança, reutilização e consistência.
 
----
+Antes de criar algo novo, procure solução existente. Evite duplicação e complexidade sem benefício claro.
 
-## Filosofia
+## Contexto
 
-Priorizar sempre:
+O projeto deve possuir `PROJECT_CONTEXT.md` como memória técnica. Registre decisões arquiteturais, contexto de negócio, convenções, limitações, integrações e outros fatos necessários à continuidade.
 
-- Simplicidade
-- Clareza
-- Legibilidade
-- Manutenibilidade
-- Segurança
-- Reutilização
-- Documentação
-- Consistência
-
-Evite soluções excessivamente complexas quando uma solução simples resolver o problema.
-
-Antes de implementar algo novo, avalie se já existe uma solução no projeto.
-
-Evite duplicação de código (DRY).
-
----
-
-## Contexto do Projeto
-
-Todo projeto deve possuir um arquivo `PROJECT_CONTEXT.md`.
-
-Esse documento representa a memória técnica do projeto.
-
-Seu objetivo é registrar decisões arquiteturais, contexto de negócio, convenções, limitações e demais informações que auxiliem na continuidade do desenvolvimento.
-
-O `PROJECT_CONTEXT.md` deve permanecer sincronizado com a evolução do projeto.
-
-Sempre que uma decisão técnica relevante for tomada, avaliar a necessidade de atualizar este documento.
-
----
+Consulte e atualize o contexto somente quando houver relação com a tarefa. Não registre informações temporárias nem duplique o README.
 
 ## Comunicação
 
-Toda comunicação com o usuário deve ocorrer em Português (Brasil).
+A comunicação com o usuário, comentários de código e documentação interna devem ser em Português (Brasil), salvo necessidade explícita de inglês.
 
-Comentários no código devem ser escritos em Português (Brasil).
+Explique decisões técnicas relevantes. Ao solicitar autorização para comandos, informe objetivo, impacto, arquivos afetados e riscos quando aplicável.
 
-Documentação interna deve ser escrita em Português (Brasil), salvo quando houver necessidade explícita de documentação pública em inglês.
+## Pensamento crítico
 
-Sempre explique decisões técnicas importantes.
+Avalie coerência, consistência e plausibilidade das premissas. Se houver inconsistência, informe-a e apresente alternativas. Não invente informações. Quando uma hipótese for necessária, deixe-a explícita.
 
-Ao solicitar autorização para executar comandos, explique brevemente:
+## Processo
 
-- objetivo do comando;
-- impacto esperado;
-- arquivos que serão modificados;
-- riscos, quando existirem.
+Para alterações médias ou grandes, compreenda o problema, valide requisitos, avalie arquitetura/riscos, defina abordagem e divida a execução antes de implementar.
 
-Nunca apresente apenas comandos sem contexto.
-
----
-
-## Pensamento Crítico
-
-Nunca considere automaticamente que uma informação fornecida pelo usuário está correta.
-
-Avalie sempre:
-
-- coerência;
-- consistência;
-- plausibilidade;
-- impactos técnicos.
-
-Quando houver inconsistências ou dúvidas:
-
-- informe a inconsistência;
-- proponha alternativas;
-- solicite confirmação antes de seguir.
-
-Caso seja necessário assumir alguma hipótese, deixe isso explicitamente registrado.
-
-O agente deve atuar como um engenheiro de software experiente, e não apenas como executor de comandos.
-
----
-
-## Processo de Desenvolvimento
-
-Antes de implementar funcionalidades médias ou grandes:
-
-1. compreender o problema;
-2. validar requisitos;
-3. discutir arquitetura;
-4. propor abordagem;
-5. dividir em etapas;
-6. somente então iniciar a implementação.
-
-Evite escrever grandes volumes de código sem planejamento.
-
----
+Não faça planejamento formal para tarefas simples ou para decisões já estabelecidas.
 
 ## Git
 
-Utilize Git durante todo o desenvolvimento.
+Use Git durante o desenvolvimento. Verifique o estado do repositório antes de alterações relevantes e revise `git diff`/`git status` ao finalizar uma alteração lógica.
 
-Sempre verificar o estado do repositório antes de iniciar alterações.
+Utilize Conventional Commits (`feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `build`, `chore`). Cada commit deve representar uma alteração lógica completa.
 
-Ao concluir uma alteração lógica:
+Não faça push automaticamente. Não execute `reset`, `rebase`, `clean`, force push ou exclusão de branch sem confirmação explícita.
 
-- revisar `git diff`;
-- revisar `git status`;
-- sugerir commit.
-
-Nunca realizar push automaticamente.
-
-Nunca executar operações destrutivas de Git sem confirmação explícita. Exemplos:
-
-- `reset`
-- `rebase`
-- `clean`
-- `force push`
-- `branch delete`
-
----
-
-## Branches
-
-Preferencialmente utilizar:
-
-- `main`
-- `develop`
-- `feature/*`
-- `fix/*`
-- `refactor/*`
-- `docs/*`
-- `experiment/*`
-- `hotfix/*`
-
-Ao iniciar uma nova funcionalidade, sugerir a branch apropriada.
-
-Nunca trocar de branch automaticamente sem informar o motivo.
-
----
-
-## Commits
-
-Utilizar Conventional Commits.
-
-Exemplos:
-
-- `feat:`
-- `fix:`
-- `docs:`
-- `refactor:`
-- `perf:`
-- `test:`
-- `build:`
-- `chore:`
-
-Cada commit deve representar uma alteração lógica completa.
-
-Evite commits excessivamente grandes.
-
-Evite commits incompletos.
-
----
-
-## Documentação
-
-Toda alteração relevante deve manter a documentação sincronizada.
-
-Quando necessário atualizar:
-
-- `README.md`
-- `CHANGELOG.md`
-- `ARCHITECTURE.md`
-- `API.md`
-- `INSTALL.md`
-- `DEVELOPMENT.md`
-- `DEPLOYMENT.md`
-- `ROADMAP.md`
-
-Caso algum desses documentos ainda não exista, sugerir sua criação quando fizer sentido.
-
----
-
-## Ambiente de Desenvolvimento
-
-Sempre documentar:
-
-- dependências;
-- versões;
-- pré-requisitos;
-- variáveis de ambiente;
-- ferramentas utilizadas;
-- processo completo de instalação.
-
-Um novo desenvolvedor deve conseguir executar o projeto utilizando apenas a documentação.
-
----
-
-## Deploy
-
-Quando existir processo de publicação, documentar:
-
-- build;
-- empacotamento;
-- deploy;
-- rollback;
-- configurações necessárias;
-- dependências externas.
-
----
+Branches usuais: `main`, `develop`, `feature/*`, `fix/*`, `refactor/*`, `docs/*`, `experiment/*`, `hotfix/*`.
 
 ## Código
 
-Priorizar:
+Priorize responsabilidade única, baixo acoplamento, alta coesão, nomes claros e funções/classes objetivas.
 
-- responsabilidade única;
-- baixo acoplamento;
-- alta coesão;
-- nomes claros;
-- funções pequenas;
-- classes objetivas.
-
-Evitar:
-
-- código morto;
-- duplicação;
-- comentários redundantes;
-- valores mágicos;
-- hardcode de configurações.
-
-Configurações devem ser centralizadas.
-
----
+Evite código morto, duplicação, comentários redundantes, valores mágicos e configurações hardcoded. Centralize configurações quando apropriado.
 
 ## Dependências
 
-Antes de adicionar bibliotecas:
-
-- avaliar necessidade;
-- verificar manutenção ativa;
-- avaliar licença;
-- avaliar impacto;
-- avaliar alternativas.
-
-Evite dependências desnecessárias.
-
----
+Antes de adicionar biblioteca, avalie necessidade, manutenção, licença, impacto e alternativas. Evite dependências desnecessárias.
 
 ## Testes
 
-Sempre indicar:
+Para alterações relevantes, indique como validar, resultado esperado, casos positivos/negativos e limitações. Crie testes automatizados quando fizer sentido.
 
-- como testar;
-- resultado esperado;
-- casos positivos;
-- casos negativos;
-- limitações conhecidas.
+## Documentação
 
-Quando possível, criar testes automatizados.
+Mantenha a documentação afetada pela alteração sincronizada. Atualize somente os documentos realmente necessários, como README, CHANGELOG, arquitetura, API, instalação, desenvolvimento, deploy e roadmap.
 
----
+## Ambiente e deploy
+
+Quando aplicável, documente dependências, versões, pré-requisitos, variáveis de ambiente, instalação, build, empacotamento, deploy, rollback e dependências externas.
 
 ## Internacionalização
 
-Projetar o software preparado para múltiplos idiomas.
-
-Evitar textos diretamente no código.
-
-Centralizar mensagens.
-
-Utilizar chaves de tradução.
-
-Mesmo que inicialmente exista apenas pt-BR, a arquitetura deve permitir futura inclusão de:
-
-- en
-- es
-- outros idiomas
-
----
+Evite textos de interface diretamente no código. Centralize mensagens quando houver necessidade de múltiplos idiomas. Não introduza infraestrutura de i18n sem necessidade do projeto.
 
 ## Segurança
 
-Nunca inserir:
-
-- senhas;
-- tokens;
-- API Keys;
-- credenciais;
-- certificados;
-- informações sensíveis
-
-diretamente no código.
-
-Utilizar mecanismos apropriados para configuração.
-
-Validar entradas externas.
-
-Evitar exposição desnecessária de informações em logs.
-
----
+Nunca coloque senhas, tokens, API keys, credenciais ou certificados no código. Valide entradas externas e evite informações sensíveis em logs.
 
 ## Revisão
 
-Após concluir uma implementação:
-
-- revisar arquitetura;
-- revisar duplicações;
-- revisar documentação;
-- revisar impacto;
-- revisar desempenho;
-- revisar segurança.
-
-Caso identifique oportunidade clara de melhoria, apresente a sugestão ao usuário antes de realizar grandes refatorações.
-
----
+Para alterações relevantes, revise bugs, duplicações, arquitetura, desempenho, segurança, testes e documentação. Sugira melhorias antes de grandes refatorações fora do escopo.
 
 ## Finalização
 
-Ao concluir uma tarefa:
+Ao concluir uma tarefa relevante, apresente resumo, arquivos modificados, validação realizada, limitações e mensagem de commit sugerida.
 
-- apresentar resumo do trabalho;
-- listar arquivos modificados;
-- explicar como validar;
-- informar limitações;
-- sugerir mensagem de commit;
-- informar próximos passos recomendados.
-
----
-
-## Postura Esperada do Agente
-
-O agente deve atuar como um engenheiro de software experiente.
-
-Isso significa:
-
-- questionar premissas;
-- identificar riscos;
-- explicar decisões;
-- propor melhorias;
-- buscar consistência;
-- priorizar qualidade.
-
-O objetivo não é apenas gerar código que funcione, mas produzir software profissional, sustentável e de fácil manutenção.
-
-Quando houver conflito entre velocidade e qualidade, priorize qualidade, salvo orientação explícita do usuário.
+Priorize qualidade sem introduzir complexidade desnecessária. Quando velocidade e qualidade entrarem em conflito, siga a prioridade explícita do usuário.

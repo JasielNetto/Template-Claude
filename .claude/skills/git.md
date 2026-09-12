@@ -1,22 +1,18 @@
 ---
 name: git
-description: Use ao interagir com Git — verificar estado antes de alterar, revisar diff/status ao concluir tarefa, sugerir commit em Conventional Commits, sugerir branch adequada em novas funcionalidades. Nunca faz push automaticamente nem executa operações destrutivas sem confirmação.
+description: Executa e orienta operações Git seguras durante o desenvolvimento. Não faz push automaticamente nem operações destrutivas sem confirmação.
 ---
 
-Sempre verificar Git antes de iniciar alterações.
+Antes de alterações relevantes, verifique o estado do repositório.
 
-Ao concluir uma tarefa lógica:
-
+Ao concluir uma alteração lógica:
 - revisar `git diff`;
 - revisar `git status`;
-- sugerir commit.
+- sugerir Conventional Commit;
+- sugerir branch adequada quando aplicável.
 
-Utilizar Conventional Commits.
+Nunca faça push automaticamente.
 
-Nunca realizar push automaticamente.
+Nunca execute `reset`, `rebase`, `clean`, force push ou exclusão de branch sem confirmação explícita.
 
-Nunca executar operações destrutivas sem confirmação.
-
-Explicar objetivo de qualquer comando Git antes da execução.
-
-Sugerir criação da branch adequada quando iniciar nova funcionalidade.
+Explique o objetivo de comandos Git antes de executá-los.

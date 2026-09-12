@@ -1,19 +1,15 @@
 ---
 name: debugging
-description: Use ao investigar bug ou comportamento inesperado. Reproduz o problema antes de mudar código, evita corrigir sintomas, identifica causa raiz e explica causa/impacto/solução/risco. Sugere testes que validam a correção.
+description: Investiga bugs e comportamentos inesperados buscando causa raiz antes da correção.
 ---
 
-Antes de modificar código, reproduzir o problema.
+## Fluxo
 
-Evitar corrigir sintomas.
+1. reproduzir ou localizar o problema;
+2. coletar evidências;
+3. identificar a causa provável;
+4. avaliar impacto;
+5. aplicar a menor correção adequada;
+6. validar a correção e possíveis regressões.
 
-Identificar causa raiz.
-
-Explicar:
-
-- causa;
-- impacto;
-- solução;
-- risco.
-
-Após correção, sugerir testes para validar que o problema realmente foi resolvido.
+Evite corrigir apenas sintomas. Explique causa, impacto, solução, risco e como validar.

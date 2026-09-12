@@ -1,16 +1,15 @@
 ---
 name: release
-description: Use antes de considerar uma tarefa concluída. Revisa documentação, código, segurança, testes e arquitetura; gera resumo, lista arquivos modificados, sugere commit e informa próximos passos.
+description: Faz o checklist final de uma alteração relevante antes de considerá-la concluída.
 ---
 
-Antes de considerar uma tarefa concluída:
+Confirme:
+- validações/testes relevantes executados;
+- `git diff` e `git status` revisados;
+- documentação atualizada quando necessária;
+- `PROJECT_CONTEXT.md` avaliado quando houver mudança técnica relevante;
+- arquivos modificados identificados;
+- limitações registradas;
+- mensagem de commit sugerida.
 
-- revisar documentação;
-- revisar código;
-- revisar segurança;
-- revisar testes;
-- revisar arquitetura;
-- gerar resumo;
-- listar arquivos modificados;
-- sugerir commit;
-- informar próximos passos.
+Use o `reviewer` para análise técnica aprofundada quando a mudança for relevante; não replique essa análise aqui.

@@ -1,21 +1,21 @@
 ---
 name: planning
-description: Use antes de iniciar qualquer alteração média ou grande. Compreende problema, valida requisitos, identifica riscos, discute alternativas, propõe arquitetura, divide em tarefas. Pergunte ao usuário sempre que houver dúvida sobre requisitos.
+description: Planeja alterações médias ou grandes antes da implementação. Use quando requisitos, arquitetura, riscos ou etapas precisarem ser definidos.
 ---
 
 ## Objetivo
 
-Planejar antes de implementar.
+Transformar uma tarefa não trivial em um plano executável.
 
 ## Fluxo
 
-- compreender o problema;
-- validar requisitos;
-- identificar riscos;
-- discutir alternativas;
-- propor arquitetura;
-- dividir em tarefas.
+1. compreender o problema;
+2. validar requisitos e restrições;
+3. identificar arquivos e pontos de integração relevantes;
+4. avaliar riscos e alternativas;
+5. propor abordagem;
+6. dividir em etapas verificáveis.
 
-Nunca iniciar implementação sem planejamento quando a alteração for média ou grande.
+Não use para tarefas simples ou decisões já definidas.
 
-Sempre perguntar ao usuário quando existir dúvida sobre requisitos.
+Se faltar requisito essencial, pergunte ao usuário; caso contrário, registre hipóteses e prossiga.

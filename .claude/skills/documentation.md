@@ -1,47 +1,18 @@
 ---
 name: documentation
-description: Use para avaliar se uma alteração exige atualização de documentação. Foca em README, CHANGELOG, INSTALL, DEVELOPMENT, DEPLOYMENT, ARCHITECTURE, API, ROADMAP e principalmente PROJECT_CONTEXT.md, que é a memória técnica do projeto.
+description: Atualiza somente a documentação afetada por uma mudança, incluindo PROJECT_CONTEXT.md quando houver decisão ou contexto técnico relevante.
 ---
 
-Toda alteração deve avaliar necessidade de atualizar documentação.
+Avalie a necessidade de atualizar a documentação antes de concluir alterações relevantes.
 
-Quando necessário atualizar:
+Atualize somente documentos afetados, como `README.md`, `CHANGELOG.md`, documentação de arquitetura/API, instalação, desenvolvimento, deploy ou roadmap.
 
-- `README.md`
-- `CHANGELOG.md`
-- `INSTALL.md`
-- `DEVELOPMENT.md`
-- `DEPLOYMENT.md`
-- `ARCHITECTURE.md`
-- `API.md`
-- `ROADMAP.md`
+### PROJECT_CONTEXT.md
 
-Se algum documento estiver ausente, sugerir sua criação.
+Registre somente informações específicas e duradouras do projeto:
+- decisões arquiteturais e seus motivos;
+- tecnologias e integrações relevantes;
+- módulos ou convenções importantes;
+- limitações e dívidas técnicas relevantes.
 
-Sempre garantir que um novo desenvolvedor consiga instalar e executar o projeto apenas utilizando a documentação.
-
-## PROJECT_CONTEXT.md
-
-Sempre avaliar se a alteração realizada exige atualização do `PROJECT_CONTEXT.md`.
-
-O `PROJECT_CONTEXT.md` deve conter apenas informações específicas do projeto.
-
-Atualizar sempre que houver:
-
-- decisões arquiteturais importantes;
-- mudança de tecnologias;
-- criação de módulos relevantes;
-- mudança na estrutura do projeto;
-- novas convenções;
-- limitações conhecidas;
-- dívidas técnicas relevantes;
-- integrações externas;
-- decisões cujo motivo seja importante preservar.
-
-Evitar registrar informações temporárias.
-
-Evitar duplicar conteúdo existente no README.
-
-O objetivo do `PROJECT_CONTEXT.md` é servir como memória técnica do projeto.
-
-Sempre que uma decisão técnica importante for tomada, registrar não apenas a decisão, mas também o motivo pelo qual ela foi escolhida e, quando relevante, as alternativas consideradas.
+Não registre informações temporárias nem duplique o README. Se a decisão for importante para futuras alterações, preserve também o motivo e, quando relevante, as alternativas consideradas.
